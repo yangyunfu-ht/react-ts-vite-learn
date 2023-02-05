@@ -1,10 +1,13 @@
-import { FunctionComponent, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useState } from 'react'
+import { FunctionComponent, useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
 
 //父组件获取子组件的状态
 const TopSlot: FunctionComponent<UserInfo> = (props) => {
+  useEffect(() => {
+    console.log('mounted')
+  },)
   return (
     <>
       <h2>我是top部分的插槽</h2>
