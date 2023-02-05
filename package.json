@@ -7,9 +7,7 @@
     "dev": "vite --mode development",
     "test": "vite --mode test",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "vue-cli-service lint",
-    "prepare": "husky install"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
