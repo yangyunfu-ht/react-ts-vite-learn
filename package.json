@@ -11,6 +11,10 @@
     "lint": "eslint --fix --ext .tsx src",
     "prepare": "husky install"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yangyunfu-ht/react-ts-vite-learn.git"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
