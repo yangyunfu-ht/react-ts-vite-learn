@@ -4,8 +4,8 @@ interface PropsTypes {
   msg: string;
 }
 
-const handleClick = (event: MouseEvent):void => {
-  console.log(event.target);
+const handleClick = ():void => {
+  console.log(1);
 };
 
 function HelloWorld({ msg }: PropsTypes) {
