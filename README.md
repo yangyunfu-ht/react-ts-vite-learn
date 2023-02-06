@@ -59,5 +59,11 @@
 #### 8.commitlint.config.js添加内容
     module.exports = {extends: ["@commitlint/config-conventional"]};
 
-#### 9.在.husky文件夹下生成commit-msg文本
+#### 9.在.husky文件夹下生成commit-msg文本,执行Git commit提交进行测试
     yarn husky add .husky/commit-msg 'yarn commitlint --edit'
+    ✖   please add rules to your 'commit.config.js'
+    ⧗   input: 优化代码结构
+    ✖   subject may not be empty [subject-empty]
+    ✖   type may not be empty [type-empty]
+    ✖   found 2 problems, 0 warnings
+    error Command failed with exit code 1.
