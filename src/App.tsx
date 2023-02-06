@@ -1,20 +1,25 @@
-import { FunctionComponent, JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import React, { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+import HelloWorld from "./components/HelloWorld";
 
 
 //父组件获取子组件的状态
-const TopSlot: FunctionComponent<UserInfo> = (props) => {
+const TopSlot = (props:UserInfo) => {
+  useEffect(() => {
+    console.log("mounted");
+  },);
   return (
     <>
+      <HelloWorld msg="Hello World"/>
       <h2>我是top部分的插槽</h2>
       <p className="text">data from children component</p>
       <h2>{ props.userInfo.name } </h2>
       <h2>{ props.userInfo.age }</h2>
       <h2>{ props.userInfo.phone }</h2>
     </>
-  )
-}
+  );
+};
 
 interface UserInfo {
   userInfo: {
@@ -25,16 +30,16 @@ interface UserInfo {
 }
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
       <AppChildren TopRender={TopSlot}  count={ count }/>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
+        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
-        <a href="https://reactjs.org" target="_blank">
+        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
@@ -51,18 +56,23 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
 
-const AppChildren = (props: { TopRender: Function, count: number}) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const AppChildren = (props: { TopRender: any, count: number}) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [userInfo, setUserInfo] = useState({
-    name: 'yyf',
+    name: "yyf",
     age: 18,
-    phone: '18213800173'
-  })
-  const { TopRender, count } = props
+    phone: "18213800173"
+  });
+  const updateUserInfo = ():void => {
+    console.log(userInfo);
+  };
+  const { TopRender, count } = props;
   return (
     <div>
       <div className="top">
@@ -73,11 +83,12 @@ const AppChildren = (props: { TopRender: Function, count: number}) => {
        <h3> { count } data from parent component</h3>
       </div>
       <div className="center">
+        <button onClick={ updateUserInfo }>updateUserInfo</button>
         center
       </div>
       <div className="footer">
         footer
       </div>
     </div>
-  )
-}
+  );
+};
