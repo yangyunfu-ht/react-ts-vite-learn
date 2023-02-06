@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import HelloWorld from "./components/HelloWorld";
 
 
 //父组件获取子组件的状态
@@ -10,6 +11,7 @@ const TopSlot = (props:UserInfo) => {
   },);
   return (
     <>
+      <HelloWorld msg="Hello World"/>
       <h2>我是top部分的插槽</h2>
       <p className="text">data from children component</p>
       <h2>{ props.userInfo.name } </h2>
@@ -59,7 +61,9 @@ function App() {
 
 export default App;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const AppChildren = (props: { TopRender: any, count: number}) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [userInfo, setUserInfo] = useState({
     name: "yyf",
     age: 18,

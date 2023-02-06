@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
-function HelloWorld() {
-  return (
-    <div>HelloWorld</div>
-  )
+interface PropsTypes {
+  msg: string;
 }
 
-export default HelloWorld
+function HelloWorld({ msg }: PropsTypes) {
+  return (
+    <div>
+      <p>{msg}</p>
+      HelloWorld
+    </div>
+  );
+}
+
+export default HelloWorld;

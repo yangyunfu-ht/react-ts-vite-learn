@@ -24,4 +24,4 @@ module.exports = {
         "quotes": ["error", "double"],
         "no-unused-vars": 0,
     }
-}
+};
