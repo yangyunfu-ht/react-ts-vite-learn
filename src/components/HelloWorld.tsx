@@ -4,12 +4,17 @@ interface PropsTypes {
   msg: string;
 }
 
+const handleClick = (event: MouseEvent):void => {
+  console.log(event.target);
+};
+
 function HelloWorld({ msg }: PropsTypes) {
   return (
     <div>
       <p>{msg}</p>
       HelloWorld
-    </div>
+      <button onClick={ handleClick }></button>
+    </div> 
   );
 }
 
