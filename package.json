@@ -8,7 +8,7 @@
     "test": "vite --mode test",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint --fix --ext .tsx src",
+    "lint": "eslint --fix --ext .tsx .ts src src/utils/*.ts",
     "prepare": "husky install"
   },
   "repository": {
@@ -33,11 +33,5 @@
     "lint-staged": "^13.1.0",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "npx --no-install commitlint --edit $1"
-    }
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import getUserName from "../utils";
 
 interface PropsTypes {
   msg: string;
@@ -13,6 +14,7 @@ function HelloWorld({ msg }: PropsTypes) {
     <div>
       <p>{msg}</p>
       HelloWorld
+      { getUserName({ name: 'yyf-----'})}
       <button onClick={ handleClick }></button>
     </div> 
   );
