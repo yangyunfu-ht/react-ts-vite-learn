@@ -7,9 +7,7 @@
     "dev": "vite --mode development",
     "test": "vite --mode test",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint --fix --ext .tsx .ts src src/utils/*.ts",
-    "prepare": "husky install"
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",

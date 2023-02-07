@@ -5,5 +5,5 @@ interface User {
 }
 
 export default function getUserName(user: User): string {
-  return '我是谁' + `${user.name}`
+  return "我是谁" + `${user.name}`;
 }
